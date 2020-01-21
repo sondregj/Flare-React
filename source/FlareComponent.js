@@ -128,7 +128,11 @@ export default class FlareComponent extends React.Component
 
 	get devicePixelRatio()
 	{
-		return window.devicePixelRatio || 1.0;
+		if (window) {
+			return window.devicePixelRatio
+		}
+
+		return 1.0;
 	}
 
 	load(file)
@@ -285,7 +289,7 @@ export default class FlareComponent extends React.Component
 		}
 
 		this._LastAdvanceTime = Date.now();
-		window.requestAnimationFrame(() => this.advance());
+		requestAnimationFrame(() => this.advance());
 		this._IsRendering = true;
 	}
 
@@ -500,7 +504,7 @@ export default class FlareComponent extends React.Component
 		if (advanceSpeed > 0)
 		{
 			this._IsRendering = true;
-			window.requestAnimationFrame(() => this.advance());
+			requestAnimationFrame(() => this.advance());
 		}
 		else
 		{
