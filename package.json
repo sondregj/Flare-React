@@ -1,5 +1,5 @@
 {
-    "name": "flare-react",
+    "name": "@sondregj/flare-react",
     "version": "1.0.7",
     "description": "React component to host and control Flare animations.",
     "main": "build/FlareReact.js",
